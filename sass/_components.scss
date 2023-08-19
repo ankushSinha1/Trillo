@@ -189,13 +189,22 @@
 ///hotel overview
 .overview{
     display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--color-grey-light-1);
+
     &__heading{
         text-transform: uppercase;
+        font-size: 2.25rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+        padding: 1.5rem 3rem;
     }
     &__stars{
         // flex: 1;        //This will create a huge space between stars div and location div
         margin-right: auto;     //This is better than doing flex: 1 because now the element takes only its own width 
                             // and provides us with a large gap
+        display: flex;          //This will allow the internal svg icons to take only the icon space and not their 
+                            // default height(slightly larger than icon which creates problems in alignment)
         
     }
     &__icon-star,
@@ -204,14 +213,71 @@
         width: 1.75rem;
         fill: var(--color-primary);
     }
+    &__icon-location{
+        margin-right: 0.5rem;
+    }
     &__location{
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
     }
     &__rating{
+        background-color: var(--color-primary);
+        margin-left: 3rem;
+        color: white;
+        align-self: stretch;
+        padding: 0 2.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         &-average{
-            
+            font-size: 2.25rem;
+            font-weight: 300;
+            margin-bottom: -3px;
         }
         &-count{
-
+            font-size: .8rem;
+            text-transform: uppercase;
         }
+    }
+}
+//////////////////////////////////
+///button inline
+
+.btn-inline{
+    border: none;
+    color: var(--color-primary);
+    font-size: inherit;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover{
+        color: var(--color-grey-dark-1);
+    }
+    &:focus{
+        outline: none;
+        animation: pulsate 1s infinite;
+
+    }
+}
+
+@keyframes pulsate{
+    0%{
+        transform: scale(1);
+        box-shadow: none;
+    }
+    50%{
+        transform: scale(1.05);
+        box-shadow: 0 1rem 4rem rgba( 0,0,0, .3);
+    }
+    100%{
+        transform: scale(1);
+        box-shadow: none;
+        
     }
 }
