@@ -393,8 +393,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center; }
-  .user-reviews:focus {
-    background-color: var(--color-primary); }
 
 ::selection {
   color: white;
