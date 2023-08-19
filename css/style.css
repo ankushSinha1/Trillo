@@ -143,13 +143,22 @@ body {
     left: 0;
     height: 100%;
     width: 3px;
-    background-color: var(--color-primary); }
+    background-color: var(--color-primary);
+    transform: scaleY(0);
+    transition: transform .2s,  width .2s .2s; }
+  .side-nav__item:hover::before, .side-nav__item--active::before {
+    transform: scaleY(1);
+    width: 100%; }
+  .side-nav__item:active::before {
+    background-color: var(--color-primary-light); }
   .side-nav__link:link, .side-nav__link:visited {
     color: var(--color-grey-light-1);
     text-decoration: none;
     text-transform: uppercase;
     display: block;
     padding: 1.5rem 3rem;
+    z-index: 2;
+    position: relative;
     display: flex;
     align-items: center; }
   .side-nav__icon {
