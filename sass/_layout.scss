@@ -19,11 +19,15 @@
 }
 
 .sidebar{
+    display: flex;
+    flex-direction: column;
     background-color: var(--color-grey-dark-1);
     flex: 0 0 18%;
+    justify-content: space-between;
 }
 .hotel-view{
     background-color: #fff;
     flex: 1;    //The flex item will grow as much as it wants(remaining width of the flex container)
+    height: 80rem;
     
 }
