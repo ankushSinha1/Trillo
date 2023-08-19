@@ -141,7 +141,7 @@
     }
     &__item:active::before{
         background-color: var(--color-primary-light);
-        
+
     }
     &__link:link,
     &__link:visited{
@@ -174,4 +174,44 @@
     text-align: center;
     padding: 2.5rem;
     color: var(--color-grey-light-4);
+}
+//////////////////////////////////
+///GAllery
+.gallery{
+    display: flex;
+    &__photo{
+        width: 100%;
+        display: block;
+    }
+}
+
+//////////////////////////////////
+///hotel overview
+.overview{
+    display: flex;
+    &__heading{
+        text-transform: uppercase;
+    }
+    &__stars{
+        // flex: 1;        //This will create a huge space between stars div and location div
+        margin-right: auto;     //This is better than doing flex: 1 because now the element takes only its own width 
+                            // and provides us with a large gap
+        
+    }
+    &__icon-star,
+    &__icon-location{
+        height: 1.75rem;
+        width: 1.75rem;
+        fill: var(--color-primary);
+    }
+    &__location{
+    }
+    &__rating{
+        &-average{
+            
+        }
+        &-count{
+
+        }
+    }
 }
